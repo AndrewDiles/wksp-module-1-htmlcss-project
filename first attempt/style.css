@@ -1,0 +1,184 @@
+html {
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;;
+}
+
+body {
+margin: 0;
+padding: 0;
+}
+
+.topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Above is attempt to separate logo from words */
+    flex-wrap: nowrap;
+}
+
+.bartwo {
+    display: none;
+    /* Above is temporary */
+
+}
+
+.bardrop {
+    display: none;
+}
+.bartwo > a {
+    
+}
+
+.logo {
+    left: 0;
+    display: block;
+    max-height: 30px;
+    max-width: 100px;
+    
+}
+
+a:hover > img {
+    opacity: 0.5;
+}
+
+.bartwo > a:hover {
+    opacity: 0.5;
+}
+
+.bardrop > a:hover {
+    opacity: 0.5;
+}
+
+.down {
+    right: 0;
+    display: block;
+    max-height: 30px;
+    max-width: 100px;
+}
+
+.barthree > img:hover .bartwo {
+        display: block;
+}
+
+/* ABOVE In works */
+
+.Evolution {
+    /* margin-top: 5vh; */
+    /* margin-top: 100px; */
+    color: white;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+    background-image: url('./assets/Celeste.jpg');
+    background-size: cover;
+    background-position: center;
+    display:block;
+    font-size: 2rem;
+    justify-content: center;
+}
+.evo1 {
+    color: black;
+    padding: 10%;
+    font-size: 2.5rem;
+    text-align: center;
+}
+.evo2 {
+    padding: 0;
+    margin: 0%, 100px, 0, 5%;
+    font-size: 2.5rem;
+    text-align: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100%;
+    /* filter: brightness(50%); */
+}
+.evo3 {
+    padding: 5%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+
+}
+#Oldschool {
+    min-height: 100vh;
+
+}
+
+#Growth {
+    min-height: 100vh;
+}
+
+#Modernized {
+    min-height: 100vh;
+}
+.modone {
+    min-height: 50vh;
+}
+
+.modtwo {
+    min-height: 50vh;
+}
+
+#Games {
+    margin: 0;
+    padding: 0;
+}
+
+#Games > a {
+    margin: 0;
+    padding: 0;
+}
+
+.gameimg {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a:hover > .gameimg {
+    opacity: 1.0;
+    transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+    .barthree {
+        display: none;
+    }
+
+    .bartwo {
+        display: inline-block;
+        color: whitesmoke;
+        margin: 0 40px;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .bartwo > a {
+        color: whitesmoke;
+        margin: 0 40px;
+        text-decoration: none;
+        transition: opacity 0.2s ease-in-out;
+    }
+    .bardrop {
+        display: flex;
+    }
+    .bardrop > a {
+        color: whitesmoke;
+        margin: 0 40px;
+        text-decoration: none;
+        transition: opacity 0.2s ease-in-out;
+    }
+    #Games {
+        /* display: -moz-grid; */
+    }
+}
+@media (min-width: 1200px) {
+
+
+}
