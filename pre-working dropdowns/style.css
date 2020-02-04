@@ -22,7 +22,7 @@ padding: 0;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-    z-index: 2;
+    z-index: 5;
 }
 
 .nav-mobile a {
@@ -47,13 +47,13 @@ padding: 0;
     margin-top: 7px;
 }
 
-.downlinks {
-    display:none;
+.dropdown-menu {
+    display: none;
     color: white;
 }
 
-.dropdown-menu {
-    display: none;
+.downlinks {
+    display:none;
     color: white;
 }
 
@@ -104,6 +104,11 @@ padding: 0;
 
 .inf:hover {
     opacity: 0.5;
+}
+
+.games-menu {
+    position: absolute;
+/* display: none; */
 }
 
 
@@ -160,10 +165,51 @@ h2 {
 
 
 #old {
-    min-height: 100vh;
+    display: block;
+    text-align: center;
+    margin: 50px;
 }
 
+.box1,
+.box2,
+.box3{
+    border: 1px rgb(216, 216, 216) solid;
+    padding: 25px;
+    margin: 25px;
+    width: 300px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 1px rgb(216, 216, 216);
+    justify-content: center;
+    /* margin-right: 0px; */
+}
 
+.gotItButton {
+    background-color: black;
+    color:white;
+    font-size: 1rem;
+    padding: 10px 0;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.gotItButton:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.gotItButton a {
+    text-decoration: none;
+    color: white
+}
+
+.gotItButton:active {
+    
+}
+
+.boximg {
+    height: 50px;
+    width: auto;
+}
 
 
 #grow {
@@ -255,9 +301,12 @@ h2 {
 .imgcells {
     overflow: hidden;
     position: relative;
-    /* min-height: 100%; */
+    height: 300px;
     display: grid;
-    /* width:100%; */
+    /* text-align: center; */
+    justify-content: center;
+    height: 300px;
+    width:auto;
 }
 
 .gamejpg {
@@ -265,8 +314,9 @@ h2 {
     width: 100%;
     opacity: 1.0;
     /* min-height: 100%; */
-    height: auto;
+    height: 100%;
     position: relative;
+    z-index: 2;
 }
 .gamejpg:hover {
     opacity: 0.8;
@@ -274,17 +324,25 @@ h2 {
 }
 
 .text1 {
+    width: 200px;
+    height: 50px;
     position: absolute;
-    z-index: 1;
+    left: 30%;
+    top: 40%;
+    z-index: 0;
     text-align: center;
-    opacity: 0;
+    opacity: 1;
+    font-size: 1.2rem;
 }
 
-.Cuphead:hover .text1{
-    opacity: 1.0;
+.CupHead:hover .text1{
+    z-index: 3;
+    opacity: 1;
 }
 
-/* Above is not working as intended */
+/* Issue: Above is not working as intended.  Tried using opacity and z-index
+opcatiy of text retains that of gamejpg.  Would have done this 6x if I had it working.
+*/
 
 /* Game images end */
 
@@ -361,11 +419,13 @@ display: flex;
 }
 
 .submit {
-    position: absolute;
-    right: 33%;
+    
+    /* right: 33%; */
     height: 38px;
     margin-top: 10px;
     margin-bottom: 10px;
+    /* position: absolute; */
+
     /* position: absolute; */
     /* left: 60%; */
     /* top: 100px; */
@@ -382,6 +442,8 @@ display: flex;
 
 @media (min-width: 768px) {
 
+    /* Nav bar begins */
+
     .nav-mobile {
         display: none;
     }
@@ -397,7 +459,7 @@ display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: nowrap;
-        z-index: 2;
+        z-index: 5;
     }
     
     .nav-wide a {
@@ -415,6 +477,65 @@ display: flex;
     .navlinks:hover {
         border-bottom: white 3px solid;
     }
+
+    .games-menu {
+        position: absolute;
+        right: 50px;
+    }
+    .games-list li{
+        text-decoration: none;
+        list-style-type: none;
+        position: relative;
+        top: -5px;
+        right: -50px;
+    text-align: right;
+    background-color: black;
+        display: none;    
+        /*ABOVE LINE REVEALS THE MENU*/
+    }
+
+    /* .gameslist:hover .games-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+    } */
+
+     .gameslist:hover {
+        opacity: 0.2;
+    }
+
+    /* .gameslist:hover .games-list {
+        display: block;
+    } */
+
+    .gameslist:hover .games-list li {
+        display: block;
+    }
+
+    /* .gameslist:hover .games-menu {
+        display: block;
+    }
+    .gameslist:hover .gameslinks {
+        display: block;
+    }
+    .gameslist:hover .gameslinks {
+        margin-right: 0;
+        display: block;
+    }  */
+
+/* Above blocks are me trying to get the drop down to work.
+Once I got it working I would have done the mobile one's. */
+
+
+/* Issue with drop down */
+
+    .gameslist > li {
+        list-style-type: none;
+    }
+
+
+
+/* Nav Bar Ends */
 
     .first-screen p,
     .first-screen h2 {
@@ -457,7 +578,27 @@ display: flex;
 
 /* Issue: Dashed border ends at margin. */
 
+    #old {
+        display: grid;
+        grid-template-areas:
+        'b1'
+        'b2'
+        'b3';
+        grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+        grid-template-areas:
+        'b1 b1 b2 b2 '
+        '. b3 b3 .';
+    }
 
+    .box1 {
+        grid-area: b1;
+    }
+    .box2 {
+        grid-area: b2;
+    }
+    .box3 {
+        grid-area: b3;
+    }
 
     .top .spinner {
         position: absolute;
@@ -584,6 +725,10 @@ display: flex;
 
     .first-screen-paragraphs {
         display: flex;
+    }
+
+    #old {
+        display: inline-flex;
     }
 
     #now {
